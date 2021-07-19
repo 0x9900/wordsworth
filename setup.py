@@ -9,7 +9,7 @@ import gen_cw
 __doc__ = gen_cw.__doc__
 
 __author__ = "Fred C. (W6BSD)"
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 __license__ = 'BSD'
 
 py_version = sys.version_info[:2]
