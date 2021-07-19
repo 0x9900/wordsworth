@@ -9,18 +9,22 @@ import gen_cw
 __doc__ = gen_cw.__doc__
 
 __author__ = "Fred C. (W6BSD)"
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 __license__ = 'BSD'
 
 py_version = sys.version_info[:2]
 if py_version < (3, 5):
   raise RuntimeError('gen_cw requires Python 3.5 or later')
 
+def readme():
+  with open('README.md') as fd:
+    return fd.read()
+
 setup(
   name='gen_cw',
   version=__version__,
   description='Wordsworth Morse code exercises for fldigi',
-  long_description=__doc__,
+  long_description=readme(),
   long_description_content_type='text/markdown',
   url='https://github.com/0x9900/gen_wordsworth/',
   license=__license__,
