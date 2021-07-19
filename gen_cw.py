@@ -6,7 +6,7 @@
 
 """%(prog)s [options]
 
-Generate a sequence of words choosen from different dataset, that you
+Generate a sequence of words chosen from a different dataset that you
 can copy into fldigi to help you learn morse code.
 The dataset can be one of serveral from the following list:
   - abbrevs
@@ -22,22 +22,16 @@ Example:
 
     $ gen_cw --repeat 4 --spaces 10 --dataset abbrevs
 
-If you are running this program on MacOS it will automatically copy
-sequence of words into your clipboard buffer. You just need to paste
-it into fldigi.
+If you are running this program on macOS, it will automatically copy
+the sequence of words into your clipboard buffer. You can paste it into fldigi.
 
-It is possible to run this program as an fldigi macro. Every time you
-click on the macro the cw exercise will automatically appear into your
+It is possible to run this program as a fldigi macro. Every time you
+Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
-
-Example:
-    <TX>
-    <EXEC>/usr/local/bin/gen_cw --repeat 4 --spaces 5</EXEC>
-    <RX>
-
 """
 
 import argparse
+import os
 import string
 import sys
 
@@ -142,7 +136,7 @@ def main():
   parser.add_argument("-s", "--spaces", type=int, default=SPACES,
                       help="Spacing between each words [default: %(default)s]")
   parser.add_argument("-n", "--nb-words", type=int, default=NB_WORDS,
-                      help="Number of words to select")
+                      help="Number of word to select")
   parser.add_argument("-r", "--repeat", type=int, default=REPEAT,
                       help="repeatitions [default: %(default)s]")
   parser.add_argument("-d", "--dataset", nargs="+", type=type_dataset,
