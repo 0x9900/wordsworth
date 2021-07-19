@@ -16,9 +16,9 @@ You can also watch George's presentation at [QSO Today][2]
 
 ## Installation
 
-You can install this program from the source located on my [github]
+You can install this program from the source located on my [github][3]
 account. If you already have your Python environment set up, the
-easiest way is by using `pip` with the following command:
+easiest way is by using [pip][4] with the following command:
 
     $ pip install gen-cw
 
@@ -27,13 +27,13 @@ gen_cw will use it in the sequences of words generated. Set that
 variable permanently to your `.bashrc` or `.zshrc` file depending on
 the type of shell you are using.
 
-   $ export CALL_SIGN=W6BSD
+    $ export CALL_SIGN=W6BSD
 
 ## Usage
 
 If you are running this program on macOS, it will automatically copy
 the sequence of words into your clipboard buffer. You simply need to
-paste it into [fldigi][4].
+paste it into [fldigi][5].
 
 ### Example:
 
@@ -41,7 +41,7 @@ paste it into [fldigi][4].
 
 
 
-It is possible to run this program as an [fldigi][4] macro. Every time
+It is possible to run this program as an [fldigi][5] macro. Every time
 you click on the macro. The CW exercise will automatically appear in
 your fldigi transmit window.
 
@@ -55,4 +55,5 @@ your fldigi transmit window.
 [1]: misc/QST-Wordsworth.pdf
 [2]: https://vimeo.com/523481792
 [3]: https://github.com/0x9900/wordsworth
-[4]: http://www.w1hkj.com
+[4]: https://pypi.org/project/gen-cw/
+[5]: http://www.w1hkj.com
