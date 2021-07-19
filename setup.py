@@ -9,7 +9,7 @@ import gen_cw
 __doc__ = gen_cw.__doc__
 
 __author__ = "Fred C. (W6BSD)"
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 __license__ = 'BSD'
 
 py_version = sys.version_info[:2]
@@ -26,7 +26,7 @@ setup(
   description='Wordsworth Morse code exercises for fldigi',
   long_description=readme(),
   long_description_content_type='text/markdown',
-  url='https://github.com/0x9900/gen_wordsworth/',
+  url='https://github.com/0x9900/wordsworth/',
   license=__license__,
   author=__author__,
   author_email='w6bsd@bsdworld.org',
