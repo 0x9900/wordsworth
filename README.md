@@ -22,6 +22,13 @@ easiest way is by using `pip` with the following command:
 
     $ pip install gen-cw
 
+If you set the environment variable `CALL_SIGN` with your call sign,
+gen_cw will use it in the sequences of words generated. Set that
+variable permanently to your `.bashrc` or `.zshrc` file depending on
+the type of shell you are using.
+
+   $ export CALL_SIGN=W6BSD
+
 ## Usage
 
 If you are running this program on macOS, it will automatically copy
