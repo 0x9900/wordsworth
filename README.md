@@ -51,6 +51,29 @@ your fldigi transmit window.
     <EXEC>/usr/local/bin/gen_cw --repeat 4 --spaces 5</EXEC>
     <RX>
 
+## Datasets
+
+The datasets are:
+
+  - abbrevs
+  - alpha
+  - common_names
+  - common_words
+  - connectives
+  - numbers
+  - pro_codes
+  - punctuation
+
+To use a specific dataset use the argument `--dataset` followed by the
+names of the dataset you want to learn.
+
+### Example
+
+    $ gen_cw --nb-words 50 --repeat 3 --dataset alpha numbers abbrevs
+
+In this example the program will chose 50 words from the 3 datasets
+alpha, numbers, abbrevs. Each word will be repeated 3 times.
+
 
 [1]: misc/QST-Wordsworth.pdf
 [2]: https://vimeo.com/523481792
