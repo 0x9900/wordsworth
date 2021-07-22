@@ -41,6 +41,11 @@ import sys
 from random import shuffle
 from subprocess import Popen, PIPE
 
+# The program gen_cw uses the call sign defined in fldigi. When
+# running gen_cw in a console, the environment variable "CALL_SIGN"
+# will be used. If none of these are defined, this is the call sign
+# that will be used.
+DEFAULT_CALL = "W1AW"
 SPACES = 10
 REPEAT = 4
 NB_WORDS = 40
@@ -116,8 +121,7 @@ def pbcopy(buffer):
     return
   with Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=PIPE) as process:
     process.communicate(buffer.encode('utf-8'))
-  print('*** The CW excercise has been copied into your clipboard ***',
-        file=sys.stderr, end="\n\n")
+  print('*** The CW excercise has been copied into your clipboard ***', file=sys.stderr)
 
 
 def type_dataset(parg):
@@ -139,7 +143,7 @@ def type_dataset(parg):
 
 def main():
   """This is where we make the sausage"""
-  call_sign = os.getenv('FLDIGI_MY_CALL', 'W1AW')
+  call_sign = os.getenv('FLDIGI_MY_CALL', os.getenv('CALL_SIGN', DEFAULT_CALL))
   parser = argparse.ArgumentParser(usage=__doc__)
   parser.add_argument("-s", "--spaces", type=int, default=SPACES,
                       help="Spacing between each words [default: %(default)s]")
@@ -147,8 +151,8 @@ def main():
                       help="Number of word to select")
   parser.add_argument("-r", "--repeat", type=int, default=REPEAT,
                       help="repeatitions [default: %(default)s]")
-  parser.add_argument("-d", "--dataset", nargs="+", type=type_dataset,
-                      default="abbrevs", help="See --help for the list of datasets [default: %(default)s]")
+  parser.add_argument("-d", "--dataset", nargs="+", type=type_dataset, default="abbrevs",
+                      help="See --help for the list of datasets [default: %(default)s]")
   parser.add_argument("--version", action="version", version='%(prog)s {}'.format(__version__))
   opts = parser.parse_args()
   spacing = ' ' * opts.spaces
