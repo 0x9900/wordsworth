@@ -9,14 +9,15 @@
 Generate a sequence of words chosen from a different dataset that you
 can copy into fldigi to help you learn morse code.
 The dataset can be one of serveral from the following list:
-  - abbrevs
-  - alpha
-  - common_names
-  - common_words
-  - connectives
-  - numbers
-  - pro_codes
-  - punctuation
+  - "abbrevs"      abbreviations used in ham radio
+  - "alpha"        alphabet [A-Z]
+  - "common_names" common US names
+  - "common_words" the 100 most common words
+  - "connectives"  140 words such as 'AND', 'OR', 'THAT', etc
+  - "numbers"      Digits [0-9]
+  - "pro_codes"    ham radio pro-codes <AR>, <AS>, <BT>, <SK>, etc
+  - "punctuation"  all the punctuation used in Morse
+  - "words"        more than 30,000 words from the dictionary
 
 Example:
 
@@ -88,20 +89,23 @@ DATASET = {
     'LIKE', 'OUR', 'THE', 'YOUR', 'HAVE', 'THAN', 'MOST',
     'THINK', 'GOOD', 'GET', 'ABOUT', 'WHO', 'UP', 'OF', 'ALL'
   ],
+  "WORDS": None,
 }
 
 
-def read_dict(dict_name):
-  """Read words from a file (used to read os dictionaries)"""
-  words = []
+def read_dict(dict_name, length=6):
+  """Read words shorter than "length" character from a file (used to read OS dictionaries)"""
+  words = set()
   try:
     with open(dict_name, 'r') as fdi:
-      words = {w.strip().upper() for w in fdi}
-      words = [w for w in words if len(w) <= 5]
+      for word in fdi:
+        word = word.strip().upper()
+        word = word.strip("'S")
+        if len(word) <= length:
+          words.add(word)
   except IOError as err:
     print(err, file=sys.stderr)
-
-  return words
+  return list(words)
 
 
 def pbcopy(buffer):
@@ -124,6 +128,8 @@ def type_dataset(parg):
 
   if parg == 'CONNECTIVES':
     DATASET['CONNECTIVES'] = read_dict('/usr/share/dict/connectives')
+  elif parg == 'WORDS':
+    DATASET['WORDS'] = read_dict('/usr/share/dict/words')
 
   return parg
 
