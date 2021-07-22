@@ -7,9 +7,9 @@ from setuptools import setup, find_packages
 import gen_cw
 
 __doc__ = gen_cw.__doc__
+__version__ = gen_cw.__version__
 
 __author__ = "Fred C. (W6BSD)"
-__version__ = '0.1.5'
 __license__ = 'BSD'
 
 py_version = sys.version_info[:2]
