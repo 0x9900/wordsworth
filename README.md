@@ -61,7 +61,7 @@ The datasets are:
  - "common_words" the 100 most common words
  - "connectives"  140 words such as 'AND', 'OR', 'THAT', etc
  - "numbers"      Digits [0-9]
- - "pro_codes"    ham radio pro-codes <AR>, <AS>, <BT>, <SK>, etc
+ - "pro_codes"    ham radio pro-codes `<AR>`, `<AS>`, `<BT>`, `<SK>`, etc
  - "punctuation"  all the punctuation used in Morse
  - "words"        more than 30,000 words from the dictionary
 
