@@ -34,6 +34,7 @@ setup(
   entry_points = {
     'console_scripts': ['gen_cw = gen_cw:main'],
   },
+  include_package_data=True,
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
