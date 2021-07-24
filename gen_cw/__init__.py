@@ -11,12 +11,12 @@ can copy into fldigi to help you learn morse code.
 The dataset can be one of serveral from the following list:
   - "abbrevs"      abbreviations used in CW
   - "alpha"        alphabet [A-Z]
-  - "common-names" common first names
-  - "common-words" most common words
   - "connectives"  connective words
+  - "names"        common first names
   - "numbers"      Digits [0-9]
   - "pro_codes"    ham radio pro-codes <AR>, <AS>, <BT>, <SK>, etc
   - "punctuation"  all the punctuation used in Morse
+  - "words" most   common words
 
 Example:
 
@@ -34,13 +34,17 @@ __version__ = '0.1.6'
 
 import argparse
 import os
-import pkg_resources
 import string
 import sys
 
 from random import shuffle
 from subprocess import Popen, PIPE
 
+try:
+  import importlib.resources as importlib_resources
+except ImportError:
+  # Fall-back importlib_resources for python < 3.7
+  import importlib_resources
 
 # The program gen_cw uses the call sign defined in fldigi. When
 # running gen_cw in a console, the environment variable "CALL_SIGN"
@@ -64,12 +68,10 @@ DATASET = {
 
 
 def read_dict(dict_name):
-  from ipdb import set_trace
-  set_trace()
   """Read words from files in the 'dicts' directory"""
   words = set()
   filename = dict_name + '.dict'
-  wordlist = pkg_resources.resource_string(__name__, filename).decode()
+  wordlist = importlib_resources.read_text(__name__, filename)
   for word in wordlist.splitlines():
     word = word.strip()
     if word.startswith('#'): # remove comments
@@ -98,8 +100,7 @@ def type_dataset(parg):
   try:
     DATASET[key] = read_dict(parg)
   except IOError as err:
-    print(err, file=sys.stderr)
-    raise argparse.ArgumentTypeError('Argument error')
+    raise argparse.ArgumentTypeError('Dictionary error: {}'.format(parg))
 
   return key
 

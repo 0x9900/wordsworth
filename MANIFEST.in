@@ -1,0 +1,7 @@
+include README.md
+
+# This actually adds the data file.
+include gen_cw/connectives.dict
+include gen_cw/common-names.dict
+include gen_cw/common-words.dict
+include gen_cw/abbrevs.dict

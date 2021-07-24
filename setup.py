@@ -31,9 +31,10 @@ setup(
   author=__author__,
   author_email='w6bsd@bsdworld.org',
   py_modules=['gen_cw'],
-  entry_points = {
-    'console_scripts': ['gen_cw = gen_cw:main'],
+  entry_points={
+    'console_scripts': ['wordsworth = gen_cw:main'],
   },
+  packages=find_packages(),
   include_package_data=True,
   classifiers=[
     'Development Status :: 3 - Alpha',
