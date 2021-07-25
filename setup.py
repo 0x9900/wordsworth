@@ -21,7 +21,7 @@ def readme():
     return fd.read()
 
 setup(
-  name='gen_cw',
+  name='wordsworth',
   version=__version__,
   description='Wordsworth Morse code exercises for fldigi',
   long_description=readme(),
@@ -31,9 +31,11 @@ setup(
   author=__author__,
   author_email='w6bsd@bsdworld.org',
   py_modules=['gen_cw'],
-  entry_points = {
-    'console_scripts': ['gen_cw = gen_cw:main'],
+  entry_points={
+    'console_scripts': ['wordsworth = gen_cw:main'],
   },
+  packages=find_packages(),
+  include_package_data=True,
   classifiers=[
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
