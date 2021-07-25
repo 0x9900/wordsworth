@@ -30,7 +30,7 @@ Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
 """
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 import argparse
 import os
@@ -82,7 +82,7 @@ def read_dict(dict_name):
 
 def pbcopy(buffer):
   """If MacOS sent the CW exercise to the clipboard"""
-  if sys.platform != "darwin":
+  if not sys.stdout.isatty() or sys.platform != "darwin":
     return
   with Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=PIPE) as process:
     process.communicate(buffer.encode('utf-8'))
