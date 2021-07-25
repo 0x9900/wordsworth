@@ -59,7 +59,7 @@ DATASET = {
   "ALPHA": list(string.ascii_uppercase),
   "NUMBERS": list(string.digits),
   "PUNCTUATION": [
-    '$', "'", "(", ")", ",", "-", ".", "/", ":", ";", "?", "@", "!"
+    "$", "'", "(", ")", ",", "-", ".", "/", ":", ";", "?", "@", "!"
   ],
   "PRO_CODES": [  # Fldigi pro-codes
     "~", "%", "&", "+", "=", "{", "}", "<", ">", "[", "]"
@@ -99,8 +99,8 @@ def type_dataset(parg):
 
   try:
     DATASET[key] = read_dict(parg)
-  except IOError as err:
-    raise argparse.ArgumentTypeError('Dictionary error: {}'.format(parg))
+  except IOError:
+    raise argparse.ArgumentTypeError('Dictionary error: {}'.format(parg)) from None
 
   return key
 
