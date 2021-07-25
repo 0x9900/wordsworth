@@ -21,7 +21,7 @@ def readme():
     return fd.read()
 
 setup(
-  name='gen_cw',
+  name='wordsworth',
   version=__version__,
   description='Wordsworth Morse code exercises for fldigi',
   long_description=readme(),

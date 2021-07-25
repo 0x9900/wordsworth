@@ -20,7 +20,7 @@ The dataset can be one of serveral from the following list:
 
 Example:
 
-    $ gen_cw --repeat 4 --spaces 10 --dataset abbrevs
+    $ wordsworth --repeat 4 --spaces 10 --dataset abbrevs
 
 If you are running this program on macOS, it will automatically copy
 the sequence of words into your clipboard buffer. You can paste it into fldigi.
@@ -30,7 +30,7 @@ Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
 """
 
-__version__ = '0.1.6'
+__version__ = '0.1.1'
 
 import argparse
 import os
@@ -46,8 +46,8 @@ except ImportError:
   # Fall-back importlib_resources for python < 3.7
   import importlib_resources
 
-# The program gen_cw uses the call sign defined in fldigi. When
-# running gen_cw in a console, the environment variable "CALL_SIGN"
+# The program wordsworth uses the call sign defined in fldigi. When
+# running wordsworth in a console, the environment variable "CALL_SIGN"
 # will be used. If none of these are defined, this is the call sign
 # that will be used.
 DEFAULT_CALL = "W1AW"

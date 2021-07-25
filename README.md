@@ -1,4 +1,4 @@
-## Gen Wordsworth CW
+## Wordsworth CW
 
 George Allison K1IG described a methodology "head copy" morse
 code. High-speed operators who copy in their heads at a speed greater
@@ -20,10 +20,10 @@ You can install this program from the source located on my [github][3]
 account. If you already have your Python environment set up, the
 easiest way is by using [pip][4] with the following command:
 
-    $ pip install gen-cw
+    $ pip install wordsworth
 
 If you set the environment variable `CALL_SIGN` with your call sign,
-gen_cw will use it in the sequences of words generated. Set that
+wordworth will use it in the sequences of words generated. Set that
 variable permanently to your `.bashrc` or `.zshrc` file depending on
 the type of shell you are using.
 
@@ -37,7 +37,7 @@ paste it into [fldigi][5].
 
 ### Example:
 
-    $ gen_cw --repeat 4 --spaces 10 --dataset abbrevs
+    $ wordworth --repeat 4 --spaces 10 --dataset abbrevs
 
 
 
@@ -48,7 +48,7 @@ your fldigi transmit window.
 ### Example of fldigi macro:
 
     <TX>
-    <EXEC>/usr/local/bin/gen_cw --repeat 4 --spaces 5</EXEC>
+    <EXEC>/usr/local/bin/wordworth --repeat 4 --spaces 5</EXEC>
     <RX>
 
 ## Datasets
@@ -70,7 +70,7 @@ names of the dataset you want to learn.
 
 ### Example
 
-    $ gen_cw --nb-words 50 --repeat 3 --dataset alpha numbers abbrevs
+    $ wordworth --nb-words 50 --repeat 3 --dataset alpha numbers abbrevs
 
 In this example the program will chose 50 words from the 3 datasets
 alpha, numbers, abbrevs. Each word will be repeated 3 times.
