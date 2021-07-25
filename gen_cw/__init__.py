@@ -30,7 +30,7 @@ Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
 """
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 import argparse
 import os
@@ -138,7 +138,6 @@ def main():
 
   buffer = spacing.join(words)
   pbcopy(buffer)
-
   print(buffer, end="\n\n")
 
 if __name__ == "__main__":

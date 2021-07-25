@@ -55,15 +55,15 @@ your fldigi transmit window.
 
 The datasets are:
 
- - "abbrevs"      abbreviations used in ham radio
- - "alpha"        alphabet [A-Z]
- - "common_names" common US names
- - "common_words" the 100 most common words
- - "connectives"  140 words such as 'AND', 'OR', 'THAT', etc
- - "numbers"      Digits [0-9]
- - "pro_codes"    ham radio pro-codes `<AR>`, `<AS>`, `<BT>`, `<SK>`, etc
- - "punctuation"  all the punctuation used in Morse
- - "words"        more than 30,000 words from the dictionary
+ - "abbrevs"     abbreviations used in ham radio
+ - "alpha"       alphabet [A-Z]
+ - "names"       common US names
+ - "words" the   100 most common words
+ - "connectives" 140 words such as 'AND', 'OR', 'THAT', etc
+ - "numbers"     Digits [0-9]
+ - "pro_codes"   ham radio pro-codes `<AR>`, `<AS>`, `<BT>`, `<SK>`, etc
+ - "punctuation" all the punctuation used in Morse
+ - "words"       more than 30,000 words from the dictionary
 
 To use a specific dataset use the argument `--dataset` followed by the
 names of the dataset you want to learn.
@@ -79,5 +79,5 @@ alpha, numbers, abbrevs. Each word will be repeated 3 times.
 [1]: misc/QST-Wordsworth.pdf
 [2]: https://vimeo.com/523481792
 [3]: https://github.com/0x9900/wordsworth
-[4]: https://pypi.org/project/gen-cw/
+[4]: https://pypi.org/project/wordsworth/
 [5]: http://www.w1hkj.com
