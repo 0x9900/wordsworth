@@ -55,15 +55,16 @@ your fldigi transmit window.
 
 The datasets are:
 
- - "abbrevs"     abbreviations used in ham radio
- - "alpha"       alphabet [A-Z]
- - "names"       common US names
- - "words" the   100 most common words
- - "connectives" 140 words such as 'AND', 'OR', 'THAT', etc
- - "numbers"     Digits [0-9]
- - "pro_codes"   ham radio pro-codes `<AR>`, `<AS>`, `<BT>`, `<SK>`, etc
- - "punctuation" all the punctuation used in Morse
- - "words"       more than 30,000 words from the dictionary
+ - "abbrevs"      abbreviations used in CW
+ - "alpha"        alphabet [A-Z]
+ - "combination"  most Frequent letters combinations
+ - "connectives"  connective words
+ - "names"        common first names
+ - "numbers"      numbers from 0 - 99
+ - "pro_codes"    ham radio pro-codes <AR>, <AS>, <BT>, <SK>, etc
+ - "punctuation"  all the punctuation used in Morse
+ - "words"        most common words
+
 
 To use a specific dataset use the argument `--dataset` followed by the
 names of the dataset you want to learn.

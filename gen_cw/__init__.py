@@ -11,12 +11,13 @@ can copy into fldigi to help you learn morse code.
 The dataset can be one of serveral from the following list:
   - "abbrevs"      abbreviations used in CW
   - "alpha"        alphabet [A-Z]
+  - "combination"  most Frequent letters combinations
   - "connectives"  connective words
   - "names"        common first names
-  - "numbers"      Digits [0-9]
+  - "numbers"      numbers from 0 - 99
   - "pro_codes"    ham radio pro-codes <AR>, <AS>, <BT>, <SK>, etc
   - "punctuation"  all the punctuation used in Morse
-  - "words" most   common words
+  - "words"        most common words
 
 Example:
 
@@ -30,7 +31,7 @@ Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
 """
 
-__version__ = '0.1.3'
+__version__ = '0.1.4'
 
 import argparse
 import os
@@ -57,11 +58,11 @@ NB_WORDS = 40
 
 DATASET = {
   "ALPHA": list(string.ascii_uppercase),
-  "NUMBERS": list(string.digits),
+  "NUMBERS": [str(n) for n in range(0,100)],
   "PUNCTUATION": [
     "$", "'", "(", ")", ",", "-", ".", "/", ":", ";", "?", "@", "!"
   ],
-  "PRO_CODES": [  # Fldigi pro-codes
+  "PRO_CODES": [                # Fldigi pro-codes
     "~", "%", "&", "+", "=", "{", "}", "<", ">", "[", "]"
   ],
 }

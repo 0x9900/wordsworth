@@ -17,8 +17,9 @@ if py_version < (3, 5):
   raise RuntimeError('gen_cw requires Python 3.5 or later')
 
 def readme():
-  with open('README.md') as fd:
-    return fd.read()
+  """Read and return the content of the README.md file"""
+  with open('README.md') as fdi:
+    return fdi.read()
 
 setup(
   name='wordsworth',
