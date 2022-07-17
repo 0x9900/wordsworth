@@ -31,7 +31,7 @@ Click on the macro the CW exercise will automatically appear into your
 fldigi transmit window.
 """
 
-__version__ = '0.1.4'
+__version__ = '0.1.5'
 
 import argparse
 import os
@@ -114,7 +114,7 @@ def main():
   parser.add_argument("-s", "--spaces", type=int, default=SPACES,
                       help="Spacing between each words [default: %(default)s]")
   parser.add_argument("-n", "--nb-words", type=int, default=NB_WORDS,
-                      help="Number of word to select")
+                      help="Number of word to select [default: %(default)s]")
   parser.add_argument("-r", "--repeat", type=int, default=REPEAT,
                       help="repeatitions [default: %(default)s]")
   parser.add_argument("-d", "--dataset", nargs="+", type=type_dataset, default="abbrevs",

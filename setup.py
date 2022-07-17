@@ -27,11 +27,15 @@ setup(
   description='Wordsworth Morse code exercises for fldigi',
   long_description=readme(),
   long_description_content_type='text/markdown',
-  url='https://github.com/0x9900/wordsworth/',
+  url='https://0x9900.com/learning-cw/',
+  project_urls = {
+    'Source': 'https://github.com/0x9900/wordsworth/',
+    'Tracker': 'https://github.com/0x9900/wordsworth/issues',
+  },
   license=__license__,
   author=__author__,
   author_email='w6bsd@bsdworld.org',
-  py_modules=['gen_cw'],
+  # py_modules=['gen_cw'],
   entry_points={
     'console_scripts': ['wordsworth = gen_cw:main'],
   },
